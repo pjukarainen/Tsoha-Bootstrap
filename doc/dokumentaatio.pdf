@@ -1,0 +1,9 @@
+Johdanto
+
+Järjestelmän tarkoituksena on voida ylläpitää Street Fighter V -pelin Capcom Pro Tourin pelaajatilastoja. 
+Capcom Pro Tourissa on alueittain turnauksia ja pelaajat saavat sijoituksestaan riippuen pisteitä kokonaistilastoon, joiden kautta
+pelaajat sitten karsiutuvat loppukilpailuun. Ajatuksena se, että käyttäjät voivat kirjauduttuaan päivittää tilastoja mm. lisätä kuvaksia, 
+mitä hahmoja pelaaja on käyttänyt, kuinka paljon pisteitä he ovat ansainneet yms.
+
+Tavoitteena on ylläpitää helposti luettavaa ja muokattavaa versiota liigan turnausten tuloksista ja pelaajista. Työ tullaan toteuttamaan
+laitoksen users-palvelimella ja ohjelmointikielenä tulee olemaan PHP. Sovellus tulee käyttämään PostgreSQL-tietokantapalvelinta.

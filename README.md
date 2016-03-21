@@ -2,9 +2,9 @@
 
 Yleisiä linkkejä:
 
-* [Linkki sovellukseeni](https://www.cs.helsinki.fi)
-* [Linkki dokumentaatiooni](https://www.github.com)
+* [Linkki sovellukseeni](https://github.com/pjukarainen/Tsoha-Bootstrap)
+* [Linkki dokumentaatiooni](https://github.com/pjukarainen/Tsoha-Bootstrap/blob/master/doc/dokumentaatio.pdf)
 
 ## Työn aihe
 
-Laita tähän aihekuvaus tai [linkki valmiiseen aiheeseen](http://advancedkittenry.github.io/suunnittelu_ja_tyoymparisto/aiheet/Pokemon-kanta.html) 
+Street Fighter V - pelin Capcom Pro Tour-liigan turnaus-, ja pelaajatilasto. Liigaan kuuluu useita turnauksia eri puolelta maailmaa ja pelaajat saavat niistä Capcom Pro Tour- pisteitä riippuen sijoituksestaan ja siitä onko kyseessä minor vai premier turnaus. Sovelluksen käyttäjät voivat kirjautumisen jälkeen lisätä ja muokata turnausten ja pelaajien tietoja ja täten pitää pelaajien ja turnausten tiedot ajantasalla.

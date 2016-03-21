@@ -2,7 +2,7 @@
 
 Yleisiä linkkejä:
 
-* [Linkki sovellukseeni](https://github.com/pjukarainen/Tsoha-Bootstrap)
+* [Linkki sovellukseeni](http://jappappi.users.cs.helsinki.fi/protour/)
 * [Linkki dokumentaatiooni](https://github.com/pjukarainen/Tsoha-Bootstrap/blob/master/doc/dokumentaatio.pdf)
 
 ## Työn aihe

@@ -1,1 +1,4 @@
--- Lisää DROP TABLE lauseet tähän tiedostoon
+DROP TABLE IF EXISTS Protour CASCADE;
+DROP TABLE IF EXISTS Player CASCADE;
+DROP TABLE IF EXISTS Tournament CASCADE;
+DROP TABLE IF EXISTS Tournamentplayer CASCADE;

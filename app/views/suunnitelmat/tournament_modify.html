@@ -1,0 +1,36 @@
+{% extends "base.html" %}
+{% block content %}
+
+<h1>Modify tournament info</h1>
+
+<form>
+    <div class="form-group">
+        <label>Name</label>
+        <input type="text" class="form-control" value="Insert name here">
+    </div>
+    <div class="form-group">
+        <label>Date</label>
+        <input type="text" class="form-control" value="Insert date here">
+    </div>
+    <div class="form-group">
+        <label>Location</label>
+        <input type="text" class="form-control" value="Insert location here">
+    </div>
+    <div class="form-group">
+        <label>Status</label>
+        <input type="text" class="form-control" value="Insert status here">
+    </div>
+    <div class="form-group">
+        <label>Region</label>
+        <input type="text" class="form-control" value="Insert region here">
+    </div>
+    <div class="form-group">
+        <label>Description</label>
+        <textarea class="form-control">Write a description
+        </textarea>
+    </div>
+    <div class="form-group">
+        <button type="submit" class="btn btn-primary">Save changes</button>
+    </div>
+</form>
+{% endblock %}

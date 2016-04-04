@@ -1,0 +1,36 @@
+{% extends "base.html" %}
+{% block content %}
+
+<h1>Modify player info</h1>
+
+<form>
+    <div class="form-group">
+        <label>Handle</label>
+        <input type="text" class="form-control" value="Insert handle here">
+    </div>
+    <div class="form-group">
+        <label>Name</label>
+        <input type="text" class="form-control" value="Insert name here">
+    </div>
+    <div class="form-group">
+        <label>Country</label>
+        <input type="text" class="form-control" value="Insert country here">
+    </div>
+    <div class="form-group">
+        <label>Characters</label>
+        <input type="text" class="form-control" value="List characters here separated with a slash eg. Cat/Dog/Parrot">
+    </div>
+    <div class="form-group">
+        <label>Points in total</label>
+        <input type="number" class="form-control" value=0>
+    </div>
+    <div class="form-group">
+        <label>Description</label>
+        <textarea class="form-control">Write a description
+        </textarea>
+    </div>
+    <div class="form-group">
+        <button type="submit" class="btn btn-primary">Save changes</button>
+    </div>
+</form>
+{% endblock %}

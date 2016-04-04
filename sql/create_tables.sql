@@ -1,4 +1,3 @@
--- Lisää CREATE TABLE lauseet tähän tiedostoon
 CREATE TABLE Protour(
 id SERIAL PRIMARY KEY,
 tournaments text[],

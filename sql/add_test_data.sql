@@ -1,4 +1,4 @@
-INSERT INTO Protour VALUES(500, '{testi, kokeilu, plstoimi}','{asd}');
+INSERT INTO Protour VALUES(500, '{testi, kokeilu, plstoimi}', '{asd}');
 
 INSERT INTO Player (handle, name, sponsor, country, characters, tournaments, points, description) VALUES ('Sikabonzai', 'Pete Jarmonen', 'Pena', 'Finland', '{Zangief, R Mika}', '{Kallio FirstStrike}', 0, 'So nice and guy yes but no');
 

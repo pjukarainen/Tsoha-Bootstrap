@@ -1,5 +1,7 @@
 <?php
 
+require 'app/models/protour.php';
+
 class HelloWorldController extends BaseController {
 
     public static function index() {
@@ -9,7 +11,11 @@ class HelloWorldController extends BaseController {
 
     public static function sandbox() {
         // Testaa koodiasi täällä
-        View::make('helloworld.html');
+        $testi = Protour::find(1);
+        $protour = Protour::all();
+
+        Kint::dump($testi);
+        Kint::dump($protour);
     }
 
     public static function login() {
@@ -35,7 +41,7 @@ class HelloWorldController extends BaseController {
     public static function player_modify() {
         View::make('suunnitelmat/player_modify.html');
     }
-    
+
     public static function player_info() {
         View::make('suunnitelmat/player_info.html');
     }

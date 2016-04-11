@@ -1,12 +1,7 @@
-CREATE TABLE Protour(
-id SERIAL PRIMARY KEY,
-tournaments text[],
-players text[]
-);
+
 
 CREATE TABLE Player(
 id SERIAL PRIMARY KEY,
-protour_id INTEGER REFERENCES Protour(id),
 handle varchar(100),
 name varchar(100),
 sponsor varchar(100),
@@ -19,13 +14,12 @@ description varchar(500)
 
 CREATE TABLE Tournament(
 id SERIAL PRIMARY KEY,
-protour_id INTEGER REFERENCES Protour(id),
 name varchar(100),
 held varchar(100),
 location varchar(100),
 status varchar(50),
 region varchar(50),
-description varchar(50),
+description varchar(5000),
 standings text[]
 );
 

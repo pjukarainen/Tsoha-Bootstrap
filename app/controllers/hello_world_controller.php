@@ -1,7 +1,5 @@
 <?php
 
-require 'app/models/protour.php';
-
 class HelloWorldController extends BaseController {
 
     public static function index() {
@@ -11,11 +9,11 @@ class HelloWorldController extends BaseController {
 
     public static function sandbox() {
         // Testaa koodiasi täällä
-        $testi = Protour::find(1);
-        $protour = Protour::all();
+        $testi = Tournament::find(1);
+        $tournaments = Tournament::all();
 
         Kint::dump($testi);
-        Kint::dump($protour);
+        Kint::dump($tournaments);
     }
 
     public static function login() {

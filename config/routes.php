@@ -18,11 +18,20 @@ $routes->get('/login', function() {
 });
 
 $routes->get('/tournaments', function() {
-    HelloWorldController::tournament_list();
+    TournamentController::index();
 });
 
-$routes->get('/tournaments/1', function() {
-    HelloWorldController::tournament_info();
+$routes->get('/tournaments/new', function() {
+    TournamentController::create();
+});
+
+$routes->post('/tournaments', function() {
+    TournamentController::store();
+});
+
+
+$routes->get('/tournaments/:id', function($id) {
+    TournamentController::show($id);
 });
 
 $routes->get('/players', function() {

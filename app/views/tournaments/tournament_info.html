@@ -1,0 +1,48 @@
+{% extends "base.html" %}
+{% block content %}
+
+<h1>{{tournament.name}}</h1>
+<div class="alert alert-success">
+    {{message}}
+</div>
+
+<p>
+    <button class="btn btn-danger">Delete</button> <a href="{{base_path}}/tournaments/{{tournament.id}}/edit" class="btn btn-default">Edit</a>
+</p>
+
+<ul>
+    <li><strong>Date:</strong> {{tournament.held}}</li>
+    <li><strong>Location:</strong> {{tournament.location}}</li>
+    <li><strong>Status:</strong> {{tournament.status}}</li>
+    <li><strong>Region:</strong> {{tournament.region}}</li>
+</ul>
+
+<p>
+    {{tournament.description}}
+</p>
+
+<h1>Top 8</h1>
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>Placing</th>
+            <th>Handle</th>
+            <th>Characters</th>
+            <th>Points</th>
+            <th></th>
+        </tr>
+    </thead>
+
+    <tbody>
+        {% for i in range(1, 8) %}
+        <tr>
+            <td>{{ i }}</td>
+            <td><a href="#">{{tournament.standings}}</a></td>
+            <td>{{tournament.standings [0]}}</td>
+            <td>{{tournament.standings[1]}}</td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+
+{% endblock %}

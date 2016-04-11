@@ -1,0 +1,37 @@
+{% extends "base.html" %}
+{% block content %}
+
+<h1>Tournaments</h1>
+
+<p>
+    <a href="{{base_path}}/tournaments/new" class="btn btn-success">Add tournament</a>
+</p>
+
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>Date</th>
+            <th>Location</th>
+            <th>Status</th>
+            <th>Region</th>
+            <th></th>
+        </tr>
+    </thead>
+
+    <tbody>
+        {% for tournament in tournaments %}
+
+        <tr>
+            <td><a href="{{base_path}}/tournaments/{{tournament.id}}">{{tournament.name}}</td>
+            <td>{{tournament.held}}</td>
+            <td>{{tournament.location}}</td>
+            <td>{{tournament.status}}</td>
+            <td>{{tournament.region}}</td>
+            <th><a class="btn-default btn-sm" href="{{base_path}}/tournaments/{{tournament.id}}/edit">Edit</a></th>
+        </tr>
+        {% endfor %}
+    </tbody>
+
+</table>
+{% endblock %}

@@ -1,4 +1,8 @@
-
+CREATE TABLE Statuser(
+id SERIAL PRIMARY KEY,
+username varchar(50),
+password varchar(50)
+);
 
 CREATE TABLE Player(
 id SERIAL PRIMARY KEY,

@@ -1,5 +1,6 @@
 {% extends "base.html" %}
 {% block content %}
+{% import "macros/forms.html" as forms %}
 
 <h1>{{tournament.name}}</h1>
 {% if message is not null %}
@@ -9,8 +10,10 @@
 </div>
 {% endif %}
 
+
 <p>
-    <button class="btn btn-danger">Delete</button> <a href="{{base_path}}/tournaments/{{tournament.id}}/edit" class="btn btn-default">Edit</a>
+    {{forms.destroy_button("#{base_path}/tournaments/#{tournament.id}/destroy")}}
+    <a href="{{base_path}}/tournaments/{{tournament.id}}/edit" class="btn btn-default">Edit</a>
 </p>
 
 <ul>

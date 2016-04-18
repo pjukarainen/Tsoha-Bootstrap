@@ -9,11 +9,8 @@ class HelloWorldController extends BaseController {
 
     public static function sandbox() {
         // Testaa koodiasi täällä
-        $testi = Tournament::find(1);
-        $tournaments = Tournament::all();
 
-        Kint::dump($testi);
-        Kint::dump($tournaments);
+      
     }
 
     public static function login() {

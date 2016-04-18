@@ -7,6 +7,13 @@
     <a href="{{base_path}}/tournaments/new" class="btn btn-success">Add tournament</a>
 </p>
 
+{% if message is not null %}
+<div class="alert alert-danger fade in">
+    <a href='#' class='close' data-dismiss='alert' aria-label='close'>&times;</a>
+    {{message}}
+</div>
+{% endif %}
+
 <table class="table table-striped">
     <thead>
         <tr>

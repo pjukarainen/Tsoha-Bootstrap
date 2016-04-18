@@ -34,6 +34,28 @@ $routes->get('/tournaments/:id', function($id) {
     TournamentController::show($id);
 });
 
+
+$routes->get('/tournaments/:id/edit', function($id) {
+    TournamentController::edit($id);
+});
+
+$routes->post('/tournaments/:id/edit', function($id) {
+    TournamentController::update($id);
+});
+
+
+$routes->post('/tournaments/:id/destroy', function($id) {
+    TournamentController::destroy($id);
+});
+
+$routes->get('/login', function() {
+    UserController::login();
+});
+
+$routes->post('/login', function() {
+    UserController::handle_login();
+});
+
 $routes->get('/players', function() {
     HelloWorldController::player_list();
 });

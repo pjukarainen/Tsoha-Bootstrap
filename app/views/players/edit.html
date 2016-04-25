@@ -1,0 +1,78 @@
+{% extends "base.html" %}
+{% block content %}
+
+<h1>Modify player info</h1>
+
+{% if errors %}
+<div class="alert alert-danger">
+    <ul>
+        {% for error in errors %}
+        <li>{{error}}</li>
+        {% endfor %}
+    </ul>
+</div>
+{% endif %}
+
+<form method="post" action="{{base_path}}/tournaments/{{attributes.id}}/edit">
+    <div class="form-group">
+        <label>Handle</label>
+        <input type="text" name="handle" class="form-control" value="{{attributes.handle}}">
+    </div>
+    <div class="form-group">
+        <label>Name</label>
+        <input type="text" name="name" class="form-control" value="{{attributes.name}}">
+    </div>
+    <div class="form-group">
+        <label>Country</label>
+        <input type="text" name="country" class="form-control" value="{{attributes.country}}">
+    </div>
+    <div class="form-group">
+        <label for="characters">Characters</label>
+        <select class="selectpicker" name="characters[]" multiple>
+            <option>Ryu</option>
+            <option>Chun-li</option>
+            <option>Nash</option>
+            <option>M.Bison</option>
+            <option>Cammy</option>
+            <option>Birdie</option>
+            <option>Ken</option>
+            <option>Necalli</option>
+            <option>Vega</option>
+            <option>R.Mika</option>
+            <option>Rashid</option>
+            <option>Karin</option>
+            <option>Zangief</option>
+            <option>Laura</option>
+            <option>Dhalsim</option>
+            <option>F.A.N.G</option>
+            <option>Alex</option>
+            <option>Guile</option>
+
+        </select>
+    </div>
+
+    <div class="form-group">
+        <label for="tournaments">Tournaments</label>
+        <select class="selectpicker" name="tournaments[]" multiple>
+            <option>Europe</option>
+            <option>North America</option>
+            <option>South America</option>
+            <option>Asia</option>
+        </select>
+    </div>
+
+    <div class="form-group">
+        <label>Points in total:</label>
+        <input type="text" class="form-control" name="points" value="{{attributes.points}}">
+    </div>
+
+    <div class="form-group">
+        <label for="description">Description:</label>
+        <textarea class="form-control" rows="10" name="description">{{attributes.description}}</textarea>
+    </div>
+
+    <div class="form-group">
+        <button type="submit" class="btn btn-primary">Save changes</button>
+    </div>
+</form>
+{% endblock %}

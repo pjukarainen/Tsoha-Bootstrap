@@ -75,8 +75,7 @@ class Tournament extends BaseModel {
         $row = $query->fetch();
 
         $this->id = $row['id'];
-//        Kint::trace();
-//        Kint::dump($row);
+        
     }
 
     public static function all() {

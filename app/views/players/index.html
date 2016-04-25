@@ -1,0 +1,57 @@
+{% extends "base.html" %}
+{% block content %}
+
+<h1>Player standings</h1>
+
+{% if message is not null %}
+<div class="alert alert-danger fade in">
+    <a href='#' class='close' data-dismiss='alert' aria-label='close'>&times;</a>
+    {{message}}
+</div>
+{% endif %}
+
+
+<p>
+    <a href="#" class="btn btn-success">Global</a>
+    <a href="#" class="btn btn-primary">North America</a>
+    <a href="#" class="btn btn-warning">South America</a>
+    <a href="#" class="btn btn-info">Europe</a>
+    <a href="#" class="btn btn-danger">Asia</a>
+
+</p>
+
+<p>
+    <a href="{{base_path}}/players/new" class="btn btn-success">Add player</a>
+</p>
+
+
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>Standing</th>
+            <th>Handle</th>
+            <th>Name</th>
+            <th>Country</th>
+            <th>Characters</th>
+            <th>Points</th>
+            <th></th>
+
+        </tr>
+    </thead>
+
+    <tbody>
+        {% for player in players %}
+        <tr>
+            <td>{{loop.index}}</td>
+            <td>{{player.sponsor}}<a href="{{base_path}}/players/{{player.id}}"> {{player.handle}}</a></td>
+            <td>{{player.name}}</td>
+            <td>{{player.country}}</td>
+            <td>{{player.characters}}</td>
+            <td>{{player.points}}</td>
+            <th><a class="btn-default btn-sm" href="{{base_path}}/players/{{player.id}}/edit">Edit</a></th>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+
+{% endblock %}

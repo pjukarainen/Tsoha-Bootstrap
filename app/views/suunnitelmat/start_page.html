@@ -1,6 +1,13 @@
 {% extends "base.html" %}
 {% block content %}
 
+{% if message is not null %}
+<div class="alert alert-success fade in">
+    <a href='#' class='close' data-dismiss='alert' aria-label='close'>&times;</a>
+    {{message}}
+</div>
+{% endif %}
+
 <h1>Capcom Protour</h1>
 
 <p>

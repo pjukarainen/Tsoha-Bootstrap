@@ -1,6 +1,23 @@
 {% extends "base.html" %}
 {% block content %}
+
+
+{% if error is not null %}
+<div class="alert alert-danger fade in">
+    <a href='#' class='close' data-dismiss='alert' aria-label='close'>&times;</a>
+    {{error}}
+</div>
+{% endif %}
+
+{% if message is not null %}
+<div class="alert alert-success fade in">
+    <a href='#' class='close' data-dismiss='alert' aria-label='close'>&times;</a>
+    {{message}}
+</div>
+{% endif %}
+
 <h1>Login</h1>
+
 
 
 <form method="post" action="{{base_path}}/login">

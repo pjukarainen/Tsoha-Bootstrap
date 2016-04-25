@@ -1,5 +1,9 @@
 <?php
 
+function check_logged_in() {
+    BaseController::check_logged_in();
+}
+
 $routes->get('/', function() {
     HelloWorldController::index();
 });
@@ -13,15 +17,12 @@ $routes->get('/hiekkalaatikko', function() {
     HelloWorldController::sandbox();
 });
 
-$routes->get('/login', function() {
-    HelloWorldController::login();
-});
 
 $routes->get('/tournaments', function() {
     TournamentController::index();
 });
 
-$routes->get('/tournaments/new', function() {
+$routes->get('/tournaments/new', 'check_logged_in', function() {
     TournamentController::create();
 });
 
@@ -35,16 +36,16 @@ $routes->get('/tournaments/:id', function($id) {
 });
 
 
-$routes->get('/tournaments/:id/edit', function($id) {
+$routes->get('/tournaments/:id/edit', 'check_logged_in', function($id) {
     TournamentController::edit($id);
 });
 
-$routes->post('/tournaments/:id/edit', function($id) {
+$routes->post('/tournaments/:id/edit', 'check_logged_in', function($id) {
     TournamentController::update($id);
 });
 
 
-$routes->post('/tournaments/:id/destroy', function($id) {
+$routes->post('/tournaments/:id/destroy', 'check_logged_in', function($id) {
     TournamentController::destroy($id);
 });
 
@@ -56,20 +57,39 @@ $routes->post('/login', function() {
     UserController::handle_login();
 });
 
+$routes->post('/logout', function() {
+    UserController::logout();
+});
+
 $routes->get('/players', function() {
-    HelloWorldController::player_list();
+    PlayerController::index();
 });
 
-$routes->get('/players/1', function() {
-    HelloWorldController::player_info();
+$routes->get('/players/new', 'check_logged_in', function() {
+    PlayerController::create();
 });
 
-$routes->get('/players/modify/1', function() {
-    HelloWorldController::player_modify();
+$routes->post('/players', function() {
+    PlayerController::store();
 });
 
-$routes->get('/tournaments/modify/1', function() {
-    HelloWorldController::tournament_modify();
+
+$routes->get('/players/:id', function($id) {
+    PlayerController::show($id);
+});
+
+
+$routes->get('/players/:id/edit', 'check_logged_in', function($id) {
+    PlayerController::edit($id);
+});
+
+$routes->post('/players/:id/edit', 'check_logged_in', function($id) {
+    PlayerController::update($id);
+});
+
+
+$routes->post('/players/:id/destroy', 'check_logged_in', function($id) {
+    PlayerController::destroy($id);
 });
 
 

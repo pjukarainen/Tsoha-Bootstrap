@@ -18,12 +18,12 @@ description varchar(500)
 CREATE TABLE Tournament(
 id SERIAL PRIMARY KEY,
 name varchar(100),
-held varchar(100),
+held date,
+ends date,
 location varchar(100),
 status varchar(50),
 region varchar(50),
-description varchar(5000),
-standings text[]
+description varchar(5000)
 );
 
 

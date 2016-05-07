@@ -25,7 +25,6 @@ class TournamentController extends BaseController {
             'description' => $params['description']
         );
 
-//        Kint::dump($params);
         $tournament = new Tournament($attributes);
         $errors = $tournament->errors();
 

@@ -3,12 +3,6 @@
 Yleisiä linkkejä:
 
 * [Linkki sovellukseeni](http://jappappi.users.cs.helsinki.fi/protour/)
-* [Pelaajat](http://jappappi.users.cs.helsinki.fi/protour/players)
-* [Pelaajan tiedot](http://jappappi.users.cs.helsinki.fi/protour/players/1)
-* [Muokkaa pelaajan tietoja](http://jappappi.users.cs.helsinki.fi/protour/players/modify/1)
-* [Turnaukset](http://jappappi.users.cs.helsinki.fi/protour/tournaments)
-* [Turnauksen tiedot](http://jappappi.users.cs.helsinki.fi/protour/tournaments/1)
-* [Muokkaa turnauksen tietoja](http://jappappi.users.cs.helsinki.fi/protour/tournaments/modify/1)
 * [Kirjautuminen](http://jappappi.users.cs.helsinki.fi/protour/login)
 * [Linkki dokumentaatiooni](https://github.com/pjukarainen/Tsoha-Bootstrap/blob/master/doc/dokumentaatio.pdf)
 * Käyttäjänimi : admin 

@@ -10,9 +10,8 @@ handle varchar(100),
 name varchar(100),
 sponsor varchar(100),
 country varchar(100),
-characters text[],
-tournaments text[],
-points INTEGER,
+characters varchar(500),
+points integer,
 description varchar(500)
 );
 

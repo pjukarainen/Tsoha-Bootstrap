@@ -19,9 +19,6 @@ Class PlayerController extends BaseController {
     public static function store() {
         $params = $_POST;
 
-        $tournaments = $params['tournaments'];
-        $characters = $params['characters'];
-
         $attributes = array(
             'handle' => $params['handle'],
             'name' => $params['name'],
@@ -29,17 +26,9 @@ Class PlayerController extends BaseController {
             'country' => $params['country'],
             'points' => $params['points'],
             'description' => $params['description'],
-            'tournaments' => array(),
-            'characters' => array()
+            'characters' => $params['characters']
         );
 
-        foreach ($tournaments as $tournament) {
-            $attributes['tournaments'][] = $tournament;
-        }
-
-        foreach ($characters as $character) {
-            $attributes['characters'][] = $character;
-        }
 
         $player = new Player($attributes);
         $errors = $player->errors();
@@ -61,27 +50,17 @@ Class PlayerController extends BaseController {
     public static function update($id) {
         $params = $_POST;
 
-        $tournaments = $params['tournaments'];
-        $characters = $params['characters'];
-
         $attributes = array(
+            'id' => $id,
             'handle' => $params['handle'],
             'name' => $params['name'],
             'sponsor' => $params['sponsor'],
             'country' => $params['country'],
             'points' => $params['points'],
-            'description' => $params['description'],
-            'tournaments' => array(),
-            'characters' => array()
+            'characters' => $params['characters'],
+            'description' => $params['description']
         );
 
-        foreach ($tournaments as $tournament) {
-            $attributes['tournaments'][] = $tournament;
-        }
-
-        foreach ($characters as $character) {
-            $attributes['characters'][] = $character;
-        }
 
 
         $player = new Player($attributes);
@@ -92,7 +71,7 @@ Class PlayerController extends BaseController {
         } else {
             $player->update($id);
 
-            Redirect::to('/players/' . $player->id, array('message' => 'Player info has been edited succesfully'));
+            Redirect::to('/players/' . $player->id, array('message' => 'Player has been edited succesfully'));
         }
     }
 

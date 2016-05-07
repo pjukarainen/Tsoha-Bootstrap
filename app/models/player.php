@@ -2,11 +2,11 @@
 
 class Player extends BaseModel {
 
-    public $id, $handle, $name, $sponsor, $country, $characters, $tournaments, $points, $description;
+    public $id, $handle, $name, $sponsor, $country, $characters, $points, $description;
 
     public function __construct($attributes) {
         parent::__construct($attributes);
-        $this->validators = array('validate_handle', 'validate_name', 'validate_country', 'validate_characters', 'validate_description');
+        $this->validators = array('validate_handle', 'validate_name', 'validate_country', 'validate_characters', 'validate_points', 'validate_description');
     }
 
     public function validate_handle() {
@@ -15,6 +15,11 @@ class Player extends BaseModel {
             $errors[] = 'Handle cannot be empty';
         }
 
+        if (strlen($this->handle) > 100) {
+            $errors[] = 'Handle is too long';
+        }
+
+
         return $errors;
     }
 
@@ -22,6 +27,14 @@ class Player extends BaseModel {
         $errors = array();
         if ($this->name == '' || $this->name == null) {
             $errors[] = 'Name cannot be empty';
+        }
+
+        if (strlen($this->name) > 100) {
+            $errors[] = 'Name is too long';
+        }
+
+        if (strlen($this->name) < 3) {
+            $errors[] = 'Name is too short';
         }
 
         return $errors;
@@ -33,13 +46,30 @@ class Player extends BaseModel {
             $errors[] = 'Please insert a country';
         }
 
+        if (strlen($this->country) > 100) {
+            $errors[] = 'Country name is too long';
+        }
+
         return $errors;
     }
 
     public function validate_characters() {
         $errors = array();
-        if ($this->name == '' || $this->name == null) {
-            $errors[] = 'Please choose at least one character';
+        if ($this->characters == '' || $this->characters == null) {
+            $errors[] = 'Please choose a character';
+        }
+
+        return $errors;
+    }
+
+    public function validate_points() {
+        $errors = array();
+        if ($this->points < 0 || !is_numeric($this->points)) {
+            $errors[] = 'Please insert a number that is 0 or higher';
+        }
+
+        if ($this->points > 4999) {
+            $errors[] = 'Please insert a number lower than 5000';
         }
 
         return $errors;
@@ -49,6 +79,10 @@ class Player extends BaseModel {
         $errors = array();
         if ($this->description == '' || $this->description == null) {
             $errors[] = 'Please write a description';
+        }
+
+        if (strlen($this->description) > 500) {
+            $errors[] = 'Description is too long (limit is 500 characters)';
         }
 
         return $errors;
@@ -68,7 +102,6 @@ class Player extends BaseModel {
                 'sponsor' => $row['sponsor'],
                 'country' => $row['country'],
                 'characters' => $row['characters'],
-                'tournaments' => $row['tournaments'],
                 'points' => $row['points'],
                 'description' => $row['description']
             ));
@@ -90,7 +123,6 @@ class Player extends BaseModel {
                 'sponsor' => $row['sponsor'],
                 'country' => $row['country'],
                 'characters' => $row['characters'],
-                'tournaments' => $row['tournaments'],
                 'points' => $row['points'],
                 'description' => $row['description']
             ));
@@ -101,8 +133,8 @@ class Player extends BaseModel {
     }
 
     public function save() {
-        $query = DB::connection()->prepare('INSERT INTO Player (handle, name, sponsor, country, characters, tournaments, points, description) VALUES (:handle, :name, :sponsor, :country, :characters[], :tournaments[], :points, :description) RETURNING id');
-        $query->execute(array('handle' => $this->handle, 'name' => $this->name, 'sponsor' => $this->sponsor, 'country' => $this->country, array('characters' => $this->characters), array('tournaments' => $this->tournaments), 'points' => $this->points, 'description' => $this->description));
+        $query = DB::connection()->prepare('INSERT INTO Player (handle, name, sponsor, country, characters, points, description) VALUES (:handle, :name, :sponsor, :country, :characters, :points, :description) RETURNING id');
+        $query->execute(array('handle' => $this->handle, 'name' => $this->name, 'sponsor' => $this->sponsor, 'country' => $this->country, 'characters' => $this->characters, 'points' => $this->points, 'description' => $this->description));
 
         $row = $query->fetch();
 
@@ -110,8 +142,8 @@ class Player extends BaseModel {
     }
 
     public function update($id) {
-        $query = DB::connection()->prepare('UPDATE Player SET handle = :handle, name = :name, sponsor = :sponsor, country = :country, characters = :characters[], tournaments = :tournaments[], points = :points, description = :description WHERE id = :id');
-        $query->execute(array('id' => $id, 'handle' => $this->handle, 'name' => $this->name, 'sponsor' => $this->sponsor, 'country' => $this->country, 'characters' => $this->characters, 'tournaments' => $this->tournaments, 'points' => $this->points, 'description' => $this->description));
+        $query = DB::connection()->prepare('UPDATE Player SET handle = :handle, name = :name, sponsor = :sponsor, country = :country, characters = :characters, points = :points, description = :description WHERE id = :id');
+        $query->execute(array('id' => $id, 'handle' => $this->handle, 'name' => $this->name, 'sponsor' => $this->sponsor, 'country' => $this->country, 'characters' => $this->characters, 'points' => $this->points, 'description' => $this->description));
     }
 
     public function destroy($id) {

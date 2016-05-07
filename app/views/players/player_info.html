@@ -19,18 +19,34 @@
 
 <ul>
     <li><strong>Handle:</strong> {{player.handle}}</li>
-    <li><strong>Name:</strong> {{player.name}}</li>
+    <li><strong>Full name:</strong> {{player.name}}</li>
     <li><strong>Sponsor:</strong> {{player.sponsor}}</li>
     <li><strong>Country:</strong> {{player.country}}</li>
-    <li><strong>Characters:</strong> {{player.characters}}</li>
+    <li><strong>Main character:</strong> {{player.characters}}</li>
     <li><strong>Points in total:</strong> {{player.points}}</li>
 </ul>
 
-<p>
-    {{player.description}}
-</p>
 
-<h1>Season overview</h1>
+
+
+<table class="table-striped">
+    <thead>
+        <tr>
+            <th></th>
+            <th>Player biography:</th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td></td>
+            <td>{{player.description}}</td>
+            <td></td>
+        </tr>
+    </tbody>
+</table>
+
+<!--<h1>Season overview</h1>
 <table class="table table-striped">
     <thead>
         <tr>
@@ -38,7 +54,7 @@
             <th>Tournament</th>
             <th>Date</th>
             <th>Status</th>
-            <th>Characters</th>
+            <th>Main character</th>
             <th>Points</th>
             <th></th>
         </tr>
@@ -55,6 +71,6 @@
             <td><a class="btn-default btn-sm" href="#">Edit</a></td>
         </tr>
     </tbody>
-</table>
+</table>-->
 
 {% endblock %}

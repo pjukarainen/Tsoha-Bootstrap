@@ -17,23 +17,39 @@
 </p>
 
 <ul>
-    <li><strong>Date:</strong> {{tournament.held}}</li>
+    <li><strong>Date:</strong> {{tournament.held}} - {{tournament.ends}}</li>
     <li><strong>Location:</strong> {{tournament.location}}</li>
     <li><strong>Status:</strong> {{tournament.status}}</li>
     <li><strong>Region:</strong> {{tournament.region}}</li>
 </ul>
 
-<p>
-    {{tournament.description}}
-</p>
+<table class="table-striped">
+    <thead>
+        <tr>
+            <th></th>
+            <th>Tournament information:</th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td></td>
+            <td>{{tournament.description}}</td>
+            <td></td>
+        </tr>
+    </tbody>
+</table>
 
-<h1>Top 8</h1>
+<!--<h1>Top 8</h1>
+<p>
+    <a href="{{base_path}}/tournaments/{{tournament.id}}/top8" class="btn btn-success">Add Top 8</a>
+</p>
 <table class="table table-striped">
     <thead>
         <tr>
             <th>Placing</th>
             <th>Handle</th>
-            <th>Characters</th>
+            <th>Main character</th>
             <th>Points</th>
             <th></th>
         </tr>
@@ -43,13 +59,13 @@
         {% for i in range(1, 8) %}
         <tr>
             <td>{{ i }}</td>
-            <td><a href="#"></a></td>
+            <td><a href="{{base_path}}/players/{{player.id}}"></a>{{player.handle}}</td>
+            <td>{{player.characters}}</td>
             <td></td>
-            <td></td>
-            <td><a class="btn-default btn-sm" href="#">Edit</a></td>
+            <td><a class="btn-default btn-sm" href="{{base_path}}/players/{{player.id}}/edit">Edit</a></td>
         </tr>
         {% endfor %}
     </tbody>
-</table>
+</table>-->
 
 {% endblock %}

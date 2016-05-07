@@ -20,12 +20,12 @@
     </div>
 
     <div class="form-group">
-        <label>Name</label>
+        <label>Full name</label>
         <input type="text" name="name" class="form-control" value="{{attributes.name}}">
     </div>
 
     <div class="form-group">
-        <label>sponsor</label>
+        <label>Sponsor</label>
         <input type="text" name="sponsor" class="form-control" value="{{attributes.sponsor}}">
     </div>
 
@@ -34,9 +34,10 @@
         <input type="text" name="country" class="form-control" value="{{attributes.country}}">
     </div>
 
+
     <div class="form-group">
-        <label for="characters">Characters</label>
-        <select class="selectpicker" multiple name="characters[]">
+        <label for="characters">Main character</label>
+        <select class="form-control" name="characters">
             <option>Ryu</option>
             <option>Chun-li</option>
             <option>Nash</option>
@@ -59,18 +60,9 @@
         </select>
     </div>
 
-    <div class="form-group">
-        <label for="tournaments">Tournaments</label>
-        <select class="selectpicker" multiple name="tournaments[]">
-            <option>Europe</option>
-            <option>North America</option>
-            <option>South America</option>
-            <option>Asia</option>
-        </select>
-    </div>
 
     <div class="form-group">
-        <label>Points in total:</label>
+        <label>Points in total (max 4999):</label>
         <input type="text" class="form-control" name="points" value="{{attributes.points}}">
     </div>
 

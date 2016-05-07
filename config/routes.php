@@ -44,6 +44,15 @@ $routes->post('/tournaments/:id/edit', 'check_logged_in', function($id) {
     TournamentController::update($id);
 });
 
+$routes->get('/tournaments/:id/top8', 'check_logged_in', function($id) {
+    TournamentController::createTopEight($id);
+});
+
+$routes->post('/tournaments/:id', function() {
+
+    TournamentController::store();
+});
+
 
 $routes->post('/tournaments/:id/destroy', 'check_logged_in', function($id) {
     TournamentController::destroy($id);

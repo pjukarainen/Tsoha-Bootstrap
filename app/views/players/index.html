@@ -29,10 +29,10 @@
     <thead>
         <tr>
             <th>Standing</th>
-            <th>Handle</th>
+            <th>Sponsor|Handle</th>
             <th>Name</th>
             <th>Country</th>
-            <th>Characters</th>
+            <th>Main character</th>
             <th>Points</th>
             <th></th>
 
@@ -43,7 +43,7 @@
         {% for player in players %}
         <tr>
             <td>{{loop.index}}</td>
-            <td>{{player.sponsor}}<a href="{{base_path}}/players/{{player.id}}"> {{player.handle}}</a></td>
+            <td>{{player.sponsor}}|<a href="{{base_path}}/players/{{player.id}}"> {{player.handle}}</a></td>
             <td>{{player.name}}</td>
             <td>{{player.country}}</td>
             <td>{{player.characters}}</td>

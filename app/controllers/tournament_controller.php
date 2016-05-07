@@ -18,12 +18,14 @@ class TournamentController extends BaseController {
         $attributes = array(
             'name' => $params['name'],
             'held' => $params['held'],
+            'ends' => $params['ends'],
             'location' => $params['location'],
             'status' => $params['status'],
             'region' => $params['region'],
             'description' => $params['description']
         );
 
+//        Kint::dump($params);
         $tournament = new Tournament($attributes);
         $errors = $tournament->errors();
 
@@ -52,6 +54,7 @@ class TournamentController extends BaseController {
             'id' => $id,
             'name' => $params['name'],
             'held' => $params['held'],
+            'ends' => $params['ends'],
             'location' => $params['location'],
             'status' => $params['status'],
             'region' => $params['region'],
@@ -70,8 +73,6 @@ class TournamentController extends BaseController {
             Redirect::to('/tournaments/' . $tournament->id, array('message' => 'Tournament has been edited succesfully'));
         }
     }
-
-   
 
     public static function destroy($id) {
         $tournament = new Tournament(array('id' => $id));

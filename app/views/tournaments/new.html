@@ -20,8 +20,13 @@
     </div>
 
     <div class="form-group">
-        <label>Date</label>
+        <label>Starting date</label>
         <input type="text" name="held" class="form-control" value="{{attributes.held}}">
+    </div>
+
+    <div class="form-group">
+        <label>Ending date</label>
+        <input type="text" name="ends" class="form-control" value="{{attributes.ends}}">
     </div>
 
     <div class="form-group">
@@ -51,6 +56,24 @@
         <label for="description">Description:</label>
         <textarea class="form-control" rows="10" name="description">{{attributes.description}}</textarea>
     </div>
+
+    <!--    <p>Top 8 (optional)</p>
+    
+        <div class="form-group">
+            <label>Placing</label>
+            <input type="text" name="placing" class="form-control" value="1">
+        </div>
+    
+        <div class="form-group">
+            <label class="col-xs-3 control-label">Handle</label>
+            <div class="col-xs-5">
+                <input class="form-control" type="text" name="standings[]"/>
+            </div>
+            <div class="form-group">
+                <div class="col-xs-offset-3 col-xs-5">
+                    <input class="form-control" type="text" name="standings[]"/>
+                </div>-->
+
 
     <div class="form-group">
         <button type="submit" class="btn btn-primary">Submit</button>
